@@ -5,17 +5,18 @@ $(document).ready(function(){
             });
     		$("#tes").click(function(){
                 // alert($("#number").val());
+                var number = $("#number").val().replace(/,/g , ".");
                 $("#result").show();
-                if (parseInt($("#number").val())!=$("#number").val())
+                if (parseInt(number)!=number)
                 {
                     $("#result").text("It's not Integer!");
                 }
                 else {
-                    var result = prime(parseInt($("#number").val()));
+                    var result = prime(parseInt(number));
 
 
                 if (result==0){
-                    result = composite(parseInt($("#number").val()));
+                    result = composite(parseInt(number));
                 }
                 else {
                     result = "It's Prime Number";
@@ -28,7 +29,7 @@ $(document).ready(function(){
 
 
     		function composite(number){
-                var a = parseInt($("#number").val());
+                var a = parseInt($("#number").val().replace(/,/g , "."));
                 if (a==1){
                     return "It's Composite Number";
                 }
