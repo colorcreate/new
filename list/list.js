@@ -19,10 +19,10 @@ $(document).ready(function() {
 
 
     function all() {
-        var genre = $("#fGenre").val();
+        var genre = $("#fGenre").val().toLowerCase();
         var result = "<table style='width:100%'><tr><th>Title</th><th>Genre</th><th>Year</th><th>Rate</th><th>Profit</th></tr>";
         for (var i = 0; i < Movies.length; i++) {
-            if (Movies[i].Genre.indexOf(genre) != -1) {
+            if (Movies[i].Genre.toLowerCase().indexOf(genre) != -1) {
                 result = result + "<tr><td>" + Movies[i].Title + "</td><td>" + Movies[i].Genre + "</td><td>" + Movies[i].Year + "</td><td>" + Movies[i].Rate + "</td><td>" + Movies[i].Profit + "</td></tr>";
             }
 
